@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Score from "./components/Score";
+import GameSnake from "./components/GameSnake";
+import Instruction from "./components/Instruction";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //debo crear un componente por cada elemento html(como puedo solucionar esta cuestion)
+    <div className="container">
+      <Header message="Learn to use Vim by playing Snake" />
+      <Score />
+      <GameSnake />
+      <Instruction />
     </div>
   );
 }

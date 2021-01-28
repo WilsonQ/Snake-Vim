@@ -1,38 +1,100 @@
-.App {
+.container {
+  display: grid;
+  height: 100vh;
+
+  grid-template-areas:
+    "header header "
+    "main main"
+    "left left"
+    "right right";
+
+  grid-template-rows: 1fr 5fr 1fr 1fr;
+  grid-template-columns: 8fr;
+}
+
+.container > * {
+  background-color: #a2ce03;
+  font-size: 40px;
+  font-family: "Potta One", cursive;
+  color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  grid-area: header;
+  padding: 15px;
+}
+main {
+  grid-area: main;
+  border-color: #213e04;
+  border-style: dashed;
+  border-width: 10px;
+}
+.right {
+  grid-area: right;
+}
+.left {
+  grid-area: left;
+}
+.instruccions > * {
+  font-size: 18px;
+  justify-content: start;
+  text-align: start;
+  margin-bottom: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.instruccions {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "title title title title"
+    "subtitle subtitle-2 move mode";
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  max-height: 175px;
+  align-items: start;
+  padding-left: 10px;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+  font-size: 20px;
+}
+.subtitle {
+  grid-area: subtitle;
+}
+.subtitle-2 {
+  grid-area: subtitle-2;
+}
+.move {
+  grid-area: move;
+}
+.mode {
+  grid-area: mode;
+}
+@media (min-width: 700px) {
+  .container {
+    grid-template-areas:
+      "header header header"
+      "right main left"
+      "right main left"
+      "right main left";
+    grid-template-rows: 1fr 12fr;
+    grid-template-columns: 2fr 6fr 2fr;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .instruccions {
+    grid-template-areas:
+      "title"
+      "subtitle"
+      "subtitle-2"
+      "move"
+      "mode";
+    grid-template-rows: 1fr 1fr 1fr 4fr 6fr;
+    grid-template-columns: 8fr;
+    max-height: 100%;
   }
 }
